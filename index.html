@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muneeb's Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #A5C9CA, #F0E5D8);
+            color: #2c3e50;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #3498db 3px solid;
+        }
+        header a {
+            color: #ecf0f1;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header a:hover {
+            color: #3498db;
+            text-shadow: 0 0 10px rgba(52, 152, 219, 0.8);
+        }
+        header ul {
+            padding: 0;
+            list-style: none;
+        }
+        header li {
+            float: right;
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+        header #branding {
+            float: left;
+        }
+        header #branding h1 {
+            margin: 0;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        section#showcase {
+            min-height: 400px;
+            background: url('showcase.jpg') no-repeat center center/cover;
+            text-align: center;
+            color: #8FA3A0;
+            animation: fadeIn 2s ease-in-out;
+            padding: 100px 0;
+        }
+        section#showcase h1 {
+            margin-top: 100px;
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
+        section#showcase p {
+            font-size: 20px;
+        }
+        .content {
+            padding: 20px;
+        }
+        .content h2 {
+            text-align: center;
+            font-size: 36px;
+            color: #2c3e50;
+        }
+        .content p {
+            text-align: justify;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #7f8c8d;
+        }
+        .contact-form {
+            background: #D9BF77;
+            padding: 20px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            border: 2px solid;
+            border-image: linear-gradient(to right, #A5C9CA, #F0E5D8) 1;
+            text-align: left;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: #2c3e50;
+            width: 50%;
+            margin: auto;
+            position: relative;
+            z-index: 1;
+        }
+        .contact-form::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(to right, #A5C9CA, #F0E5D8);
+            z-index: -1;
+            filter: blur(15px);
+            border-radius: 10px;
+        }
+        .contact-form:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+        .contact-form input, .contact-form textarea, .contact-form button {
+            display: block;
+            width: 95.5%;
+            padding: 10px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .contact-form input:focus, .contact-form textarea:focus {
+            border: none;
+            outline: none;
+            box-shadow: 0 0 5px rgba(52, 152, 219, 0.8);
+            background-color: #ecf0f1;
+            color: #2c3e50;
+        }
+        .contact-form input:hover, .contact-form textarea:hover {
+            background-color: #ecf0f1;
+            color: #2c3e50;
+        }
+        .contact-form button {
+            background: #2c3e50;
+            color: #ecf0f1;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+        .contact-form button:hover {
+            background: #3498db;
+            transform: translateY(-5px);
+        }
+        .about-me, .my-interests, .projects {
+            padding: 20px;
+            background: linear-gradient(to right, #A5C9CA, #F0E5D8);
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+            margin-bottom: 20px;
+            width: 80%;
+            margin: auto;
+            color: #2c3e50;
+            opacity: 0;
+        }
+        .about-me:hover, .my-interests:hover, .projects:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            background-color: rgba(165, 201, 202, 0.8);
+        }
+        .about-me h2, .my-interests h2, .projects h2 {
+            color: #3498db;
+            transition: color 0.3s ease-in-out;
+        }
+        .about-me h2:hover, .my-interests h2:hover, .projects h2:hover {
+            color: #2c3e50;
+        }
+        .about-me p, .my-interests p, .projects p {
+            color: #7f8c8d;
+            transition: color 0.3s ease-in-out;
+        }
+        .about-me p:hover, .my-interests p:hover {
+            color: #2c3e50;
+        }
+        .about-me img {
+            float: right;
+            margin-left: 20px;
+            border-radius: 10px;
+            width: 200px;
+        }
+        #contact-info {
+            font-family: 'Georgia', serif;
+            color: #ecf0f1;
+            background: #2c3e50;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        #contact-info h2 {
+            color: #3498db;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s, opacity 0.3s;
+            z-index: 999;
+        }
+        .overlay.show {
+            visibility: visible;
+            opacity: 1;
+        }
+        @keyframes slideInFromRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        @keyframes slideOutToRight {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+        }
+        @keyframes slideInFromLeft {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        @keyframes slideInFromBottom {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        .about-me.visible {
+            animation: slideInFromRight 1s ease-in-out forwards;
+        }
+        .about-me.hidden {
+            animation: slideOutToRight 1s ease-in-out forwards;
+        }
+        .my-interests.visible {
+            animation: slideInFromLeft 1s ease-in-out forwards;
+        }
+        .projects.visible {
+            animation: slideInFromBottom 1s ease-in-out forwards;
+        }
+        .about-me:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+            background-color: rgba(165, 201, 202, 0.9);
+        }
+        .about-me h2 {
+            color: #3498db;
+            transition: color 0.3s ease-in-out;
+        }
+        .about-me h2:hover {
+            color: #2c3e50;
+        }
+        .about-me p {
+            color: #888888;
+            transition: color 0.3s ease-in-out;
+        }
+        .about-me p:hover {
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div id="branding">
+                <h1>&nbsp;&nbsp;Muneeb</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#showcase">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <br><br>
+        <section id="showcase" style="padding: 100px 0;">
+            <h1>An Aspiring Engineering student</h1>
+            <p>If you would like to know more about me<br>You have come to the right place</p>
+        </section>
+        <br><br>
+        <br><br><br><br>
+        <div class="content">
+            <section id="about" class="about-me">
+                <h2>More About Me</h2>
+                <p>A guy intrested in Computer Science<br> 
+                    Hi i am Muneeb<br> 
+                    A First year student at National Institute of Technology, Durgapur.<br> 
+                    As you have guessed it doing an undergraduate degree namely B.Tech in Computer Science and Engineering.<br>
+                    Born in kerala. I stayed in homeland for 5 years.And When i was about join school my family moved to Dubai,UAE where my father Works<br>
+                    I spent my whole school life in Dubai and now alone moved to India for my higher studies.<br>
+                </p>
+            </section>
+            <br><br><br><br>
+            <section id="interests" class="my-interests">
+                <h2>My Interests</h2>
+                <p>I always had a strong interest in programming and coding.<br>
+                    But in order to get into one of the prestegeous intitututions of the nation, I pretty much decieded to stop all my hobbies and focused on academics.<br>
+                    Before i started preparing for JEE I had a hobby of coding and desingning.<br>
+                    During highschool i was a part of the school's web development team where we whe were assighned to take care of web pages for certain events and so well where seniors wouldn't involve.
+                    Through all that i had a great time working with my friends.<br> 
+                    I have also worked with C and C++ for my academics in higher secondary, And still continue to do so. <br> 
+                    My favorite programming language is C due it shear applications and easy to learn nature. <br>
+                    And to just let you know I am always eager to learn new technologies and improve my skills.</p>
+            </section>
+            <br><br><br><br>
+            <section id="projects" class="projects">
+                <h2>If your searching for my projects</h2>
+                <p>I am sorry i don't have any projects documented with me right now<br>
+                I have only done web development in my school and doesn't have a lot much of experience as for industry standards<br>
+                But i am sure i would be glad to work on something if you could take the initiative to give me some projects</p>
+                <ul>
+                </ul>
+            </section>
+            <br><br><br><br>
+            <section id="contact">
+                <h2>As you have been this far <br> May be Contact me<br>
+                To KNoW HOw ReAllY GoOD i Am</h2>
+                <form class="contact-form">
+                    <input type="text" name="name" placeholder="Username" required>
+                    <input type="email" name="email" placeholder="E-mail" required>
+                    <input type="text" name="phone" placeholder="Phone Number">
+                    <textarea name="message" placeholder="Message" required></textarea>
+                    <button type="submit">Send</button>
+                </form>
+            </section>
+        </div>
+    </div>
+    <br><br><br><br>
+    <div class="overlay"></div>
+    <script>
+        document.querySelector('.contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Thank you for contacting me! I will get back to you soon.');
+        });
+
+        const inputs = document.querySelectorAll('.contact-form input, .contact-form textarea');
+        inputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                this.style.backgroundColor = '#ecf0f1';
+                this.style.color = '#2c3e50';
+            });
+            input.addEventListener('blur', function() {
+                this.style.backgroundColor = '';
+                this.style.color = '';
+            });
+        });
+
+        document.querySelector('a[href="#contact"]').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.querySelector('.contact-form').scrollIntoView({ behavior: 'smooth' });
+            document.querySelector('.overlay').classList.add('show');
+        });
+
+        document.querySelector('.overlay').addEventListener('click', function() {
+            document.querySelector('.contact-form').classList.remove('show');
+            document.querySelector('.overlay').classList.remove('show');
+        });
+
+        window.addEventListener('scroll', function() {
+            const aboutSection = document.querySelector('#about');
+            const interestsSection = document.querySelector('#interests');
+            const projectsSection = document.querySelector('#projects');
+            const aboutSectionPosition = aboutSection.getBoundingClientRect().top;
+            const interestsSectionPosition = interestsSection.getBoundingClientRect().top;
+            const projectsSectionPosition = projectsSection.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.3;
+
+            if (aboutSectionPosition < screenPosition) {
+                aboutSection.classList.add('visible');
+            } else {
+                aboutSection.classList.remove('visible');
+            }
+
+            if (interestsSectionPosition < screenPosition) {
+                interestsSection.classList.add('visible');
+            } else {
+                interestsSection.classList.remove('visible');
+            }
+
+            if (projectsSectionPosition < screenPosition) {
+                projectsSection.classList.add('visible');
+            } else {
+                projectsSection.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+</html>
