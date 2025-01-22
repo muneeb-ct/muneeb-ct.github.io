@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Metadata and title -->
+    <meta charset="UTF-8"> <!-- Specifies the character encoding for the HTML document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures the page is responsive and sets the viewport to match the device's width -->
+    <title>Muneeb's Portfolio</title> <!-- Sets the title of the webpage, which appears in the browser tab -->
+    <style>
+        /* General body styles */
+        body {
+            font-family: Arial, sans-serif; /* Sets the font family for the body */
+            margin: 0; /* Removes default margin */
+            padding: 0; /* Removes default padding */
+            background: linear-gradient(to right, #A5C9CA, #F0E5D8); /* Sets a gradient background */
+            color: #2c3e50; /* Sets the text color */
+        }
+        /* Container styles */
+        .container {
+            width: 80%; /* Sets the width of the container */
+            margin: auto; /* Centers the container */
+            overflow: hidden; /* Hides overflow content */
+        }
+        /* Header styles */
+        header {
+            background: #2c3e50; /* Sets the background color */
+            color: #ecf0f1; /* Sets the text color */
+            padding-top: 30px; /* Adds padding to the top */
+            min-height: 70px; /* Sets the minimum height */
+            border-bottom: #3498db 3px solid; /* Adds a bottom border */
+        }
+        header a {
+            color: #ecf0f1; /* Sets the link color */
+            text-decoration: none; /* Removes underline from links */
+            text-transform: uppercase; /* Transforms text to uppercase */
+            font-size: 16px; /* Sets the font size */
+        }
+        header a:hover {
+            color: #3498db; /* Changes link color on hover */
+            text-shadow: 0 0 10px rgba(52, 152, 219, 0.8); /* Adds a text shadow on hover */
+        }
+        header ul {
+            padding: 0; /* Removes padding */
+            list-style: none; /* Removes list bullets */
+        }
+        header li {
+            float: right; /* Floats list items to the right */
+            display: inline; /* Displays list items inline */
+            padding: 0 20px 0 20px; /* Adds padding to the left and right */
+        }
+        header #branding {
+            float: left; /* Floats the branding to the left */
+        }
+        header #branding h1 {
+            margin: 0; /* Removes margin */
+        }
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth; /* Enables smooth scrolling */
+        }
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from { opacity: 0; } /* Starts with opacity 0 */
+            to { opacity: 1; } /* Ends with opacity 1 */
+        }
+        /* Showcase section styles */
+        section#showcase {
+            min-height: 400px; /* Sets the minimum height */
+            background: url('showcase.jpg') no-repeat center center/cover; /* Sets the background image */
+            text-align: center; /* Centers the text */
+            color: #8FA3A0; /* Sets the text color */
+            animation: fadeIn 2s ease-in-out; /* Applies the fade-in animation */
+            padding: 100px 0; /* Adds padding to the top and bottom */
+        }
+        section#showcase h1 {
+            margin-top: 100px; /* Adds margin to the top */
+            font-size: 55px; /* Sets the font size */
+            margin-bottom: 10px; /* Adds margin to the bottom */
+        }
+        section#showcase p {
+            font-size: 20px; /* Sets the font size */
+        }
+        /* Content styles */
+        .content {
+            padding: 20px; /* Adds padding */
+        }
+        .content h2 {
+            text-align: center; /* Centers the text */
+            font-size: 36px; /* Sets the font size */
+            color: #2c3e50; /* Sets the text color */
+        }
+        .content p {
+            text-align: justify; /* Justifies the text */
+            font-size: 18px; /* Sets the font size */
+            line-height: 1.6; /* Sets the line height */
+            color: #7f8c8d; /* Sets the text color */
+        }
+        /* Contact form styles */
+        .contact-form {
+            background: #D9BF77; /* Sets the background color */
+            padding: 20px; /* Adds padding */
+            margin-top: 20px; /* Adds margin to the top */
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Adds transitions */
+            border: 2px solid; /* Adds a border */
+            border-image: linear-gradient(to right, #A5C9CA, #F0E5D8) 1; /* Sets a gradient border */
+            text-align: left; /* Aligns text to the left */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adds a box shadow */
+            color: #2c3e50; /* Sets the text color */
+            width: 50%; /* Sets the width */
+            margin: auto; /* Centers the form */
+            position: relative; /* Sets the position */
+            z-index: 1; /* Sets the z-index */
+        }
+        .contact-form::before {
+            content: ''; /* Adds content before the form */
+            position: absolute; /* Sets the position */
+            top: -10px; /* Sets the top position */
+            left: -10px; /* Sets the left position */
+            right: -10px; /* Sets the right position */
+            bottom: -10px; /* Sets the bottom position */
+            background: linear-gradient(to right, #A5C9CA, #F0E5D8); /* Sets a gradient background */
+            z-index: -1; /* Sets the z-index */
+            filter: blur(15px); /* Adds a blur effect */
+            border-radius: 10px; /* Rounds the corners */
+        }
+        .contact-form:hover {
+            transform: scale(1.05); /* Scales the form on hover */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Adds a box shadow on hover */
+        }
+        .contact-form input, .contact-form textarea, .contact-form button {
+            display: block; /* Displays elements as block */
+            width: 95.5%; /* Sets the width */
+            padding: 10px; /* Adds padding */
+            margin: 5px 0; /* Adds margin to the top and bottom */
+            border: none; /* Removes the border */
+            border-radius: 5px; /* Rounds the corners */
+            transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Adds transitions */
+        }
+        .contact-form input:focus, .contact-form textarea:focus {
+            border: none; /* Removes the border */
+            outline: none; /* Removes the outline */
+            box-shadow: 0 0 5px rgba(52, 152, 219, 0.8); /* Adds a box shadow on focus */
+            background-color: #ecf0f1; /* Sets the background color on focus */
+            color: #2c3e50; /* Sets the text color on focus */
+        }
+        .contact-form input:hover, .contact-form textarea:hover {
+            background-color: #ecf0f1; /* Sets the background color on hover */
+            color: #2c3e50; /* Sets the text color on hover */
+        }
+        .contact-form button {
+            background: #2c3e50; /* Sets the background color */
+            color: #ecf0f1; /* Sets the text color */
+            cursor: pointer; /* Changes the cursor to pointer */
+            transition: background 0.3s ease-in-out, transform 0.3s ease-in-out; /* Adds transitions */
+        }
+        .contact-form button:hover {
+            background: #3498db; /* Sets the background color on hover */
+            transform: translateY(-5px); /* Moves the button up on hover */
+        }
+        /* Section styles */
+        .about-me, .my-interests, .projects {
+            padding: 20px; /* Adds padding */
+            background: linear-gradient(to right, #A5C9CA, #F0E5D8); /* Sets a gradient background */
+            border-radius: 10px; /* Rounds the corners */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Adds transitions */
+            margin-bottom: 20px; /* Adds margin to the bottom */
+            width: 80%; /* Sets the width */
+            margin: auto; /* Centers the sections */
+            color: #2c3e50; /* Sets the text color */
+            opacity: 0; /* Sets the initial opacity */
+        }
+        .about-me:hover, .my-interests:hover, .projects:hover {
+            transform: scale(1.05); /* Scales the sections on hover */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Adds a box shadow on hover */
+            background-color: rgba(165, 201, 202, 0.8); /* Sets the background color on hover */
+        }
+        .about-me h2, .my-interests h2, .projects h2 {
+            color: #3498db; /* Sets the text color */
+            transition: color 0.3s ease-in-out; /* Adds a transition */
+        }
+        .about-me h2:hover, .my-interests h2:hover, .projects h2:hover {
+            color: #2c3e50; /* Sets the text color on hover */
+        }
+        .about-me p, .my-interests p, .projects p {
+            color: #7f8c8d; /* Sets the text color */
+            transition: color 0.3s ease-in-out; /* Adds a transition */
+        }
+        .about-me p:hover, .my-interests p:hover {
+            color: #2c3e50; /* Sets the text color on hover */
+        }
+        .about-me img {
+            float: right; /* Floats the image to the right */
+            margin-left: 20px; /* Adds margin to the left */
+            border-radius: 10px; /* Rounds the corners */
+            width: 200px; /* Sets the width */
+        }
+        /* Contact info styles */
+        #contact-info {
+            font-family: 'Georgia', serif; /* Sets the font family */
+            color: #ecf0f1; /* Sets the text color */
+            background: #2c3e50; /* Sets the background color */
+            padding: 20px; /* Adds padding */
+            border-radius: 10px; /* Rounds the corners */
+            margin-top: 20px; /* Adds margin to the top */
+            text-align: center; /* Centers the text */
+        }
+        #contact-info h2 {
+            color: #3498db; /* Sets the text color */
+        }
+        /* Overlay styles */
+        .overlay {
+            position: fixed; /* Sets the position */
+            top: 0; /* Sets the top position */
+            left: 0; /* Sets the left position */
+            width: 100%; /* Sets the width */
+            height: 100%; /* Sets the height */
+            background: rgba(0, 0, 0, 0.7); /* Sets the background color */
+            visibility: hidden; /* Hides the overlay */
+            opacity: 0; /* Sets the initial opacity */
+            transition: visibility 0s, opacity 0.3s; /* Adds transitions */
+            z-index: 999; /* Sets the z-index */
+        }
+        .overlay.show {
+            visibility: visible; /* Shows the overlay */
+            opacity: 1; /* Sets the opacity */
+        }
+        /* Animation keyframes */
+        @keyframes slideInFromRight {
+            from {
+                transform: translateX(100%); /* Starts from the right */
+                opacity: 0; /* Starts with opacity 0 */
+            }
+            to {
+                transform: translateX(0); /* Ends at the original position */
+                opacity: 1; /* Ends with opacity 1 */
+            }
+        }
+        @keyframes slideOutToRight {
+            from {
+                transform: translateX(0); /* Starts at the original position */
+                opacity: 1; /* Starts with opacity 1 */
+            }
+            to {
+                transform: translateX(100%); /* Ends to the right */
+                opacity: 0; /* Ends with opacity 0 */
+            }
+        }
+        @keyframes slideInFromLeft {
+            from {
+                transform: translateX(-100%); /* Starts from the left */
+                opacity: 0; /* Starts with opacity 0 */
+            }
+            to {
+                transform: translateX(0); /* Ends at the original position */
+                opacity: 1; /* Ends with opacity 1 */
+            }
+        }
+        @keyframes slideInFromBottom {
+            from {
+                transform: translateY(100%); /* Starts from the bottom */
+                opacity: 0; /* Starts with opacity 0 */
+            }
+            to {
+                transform: translateY(0); /* Ends at the original position */
+                opacity: 1; /* Ends with opacity 1 */
+            }
+        }
+        /* Section visibility animations */
+        .about-me.visible {
+            animation: slideInFromRight 1s ease-in-out forwards; /* Applies the slide-in animation */
+        }
+        .about-me.hidden {
+            animation: slideOutToRight 1s ease-in-out forwards; /* Applies the slide-out animation */
+        }
+        .my-interests.visible {
+            animation: slideInFromLeft 1s ease-in-out forwards; /* Applies the slide-in animation */
+        }
+        .projects.visible {
+            animation: slideInFromBottom 1s ease-in-out forwards; /* Applies the slide-in animation */
+        }
+        .about-me:hover {
+            transform: scale(1.1); /* Scales the section on hover */
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* Adds a box shadow on hover */
+            background-color: rgba(165, 201, 202, 0.9); /* Sets the background color on hover */
+        }
+        .about-me h2 {
+            color: #3498db; /* Sets the text color */
+            transition: color 0.3s ease-in-out; /* Adds a transition */
+        }
+        .about-me h2:hover {
+            color: #2c3e50; /* Sets the text color on hover */
+        }
+        .about-me p {
+            color: #888888; /* Sets the text color */
+            transition: color 0.3s ease-in-out; /* Adds a transition */
+        }
+        .about-me p:hover {
+            color: #2c3e50; /* Sets the text color on hover */
+        }
+    </style>
+</head>
+<body>
+    <!-- Container for the main content -->
+    <div class="container">
+        <!-- Header section -->
+        <header>
+            <div id="branding">
+                <h1>&nbsp;&nbsp;Muneeb</h1> <!-- Branding with Muneeb's name -->
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#showcase">Home</a></li> <!-- Navigation link to the showcase section -->
+                    <li><a href="#about">About</a></li> <!-- Navigation link to the about section -->
+                    <li><a href="#projects">Projects</a></li> <!-- Navigation link to the projects section -->
+                    <li><a href="#contact">Contact</a></li> <!-- Navigation link to the contact section -->
+                </ul>
+            </nav>
+        </header>
+        <br><br>
+        <!-- Showcase section -->
+        <section id="showcase" style="padding: 100px 0;">
+            <h1>An Aspiring Engineering student</h1> <!-- Main heading in the showcase section -->
+            <p>If you would like to know more about me<br>You have come to the right place</p> <!-- Subheading in the showcase section -->
+        </section>
+        <br><br>
+        <br><br><br><br>
+        <!-- Main content sections -->
+        <div class="content">
+            <!-- About Me section -->
+            <section id="about" class="about-me">
+                <h2>More About Me</h2> <!-- Heading for the about section -->
+                <p>A guy intrested in Computer Science<br> 
+                    Hi i am Muneeb<br> 
+                    A First year student at National Institute of Technology, Durgapur.<br> 
+                    As you have guessed it doing an undergraduate degree namely B.Tech in Computer Science and Engineering.<br>
+                    Born in kerala. I stayed in homeland for 5 years.And When i was about join school my family moved to Dubai,UAE where my father Works<br>
+                    I spent my whole school life in Dubai and now alone moved to India for my higher studies.<br>
+                </p> <!-- Paragraph with information about Muneeb -->
+            </section>
+            <br><br><br><br>
+            <!-- My Interests section -->
+            <section id="interests" class="my-interests">
+                <h2>My Interests</h2> <!-- Heading for the interests section -->
+                <p>I always had a strong interest in programming and coding.<br>
+                    But in order to get into one of the prestegeous intitututions of the nation, I pretty much decieded to stop all my hobbies and focused on academics.<br>
+                    Before i started preparing for JEE I had a hobby of coding and desingning.<br>
+                    During highschool i was a part of the school's web development team where we whe were assighned to take care of web pages for certain events and so well where seniors wouldn't involve.
+                    Through all that i had a great time working with my friends.<br> 
+                    I have also worked with C and C++ for my academics in higher secondary, And still continue to do so. <br> 
+                    My favorite programming language is C due it shear applications and easy to learn nature. <br>
+                    And to just let you know I am always eager to learn new technologies and improve my skills.</p> <!-- Paragraph with information about Muneeb's interests -->
+            </section>
+            <br><br><br><br>
+            <!-- Projects section -->
+            <section id="projects" class="projects">
+                <h2>If your searching for my projects</h2> <!-- Heading for the projects section -->
+                <p>I am sorry i don't have any projects documented with me right now<br>
+                I have only done web development in my school and doesn't have a lot much of experience as for industry standards<br>
+                But i am sure i would be glad to work on something if you could take the initiative to give me some projects</p> <!-- Paragraph with information about Muneeb's projects -->
+                <ul>
+                </ul>
+            </section>
+            <br><br><br><br>
+            <!-- Contact section -->
+            <section id="contact">
+                <h2>As you have been this far <br> May be Contact me<br>
+                To KNoW HOw ReAllY GoOD i Am</h2> <!-- Heading for the contact section -->
+                <form class="contact-form">
+                    <input type="text" name="name" placeholder="Username" required> <!-- Input field for username -->
+                    <input type="email" name="email" placeholder="E-mail" required> <!-- Input field for email -->
+                    <input type="text" name="phone" placeholder="Phone Number"> <!-- Input field for phone number -->
+                    <textarea name="message" placeholder="Message" required></textarea> <!-- Textarea for message -->
+                    <button type="submit">Send</button> <!-- Submit button -->
+                </form>
+            </section>
+        </div>
+    </div>
+    <br><br><br><br>
+    <!-- Overlay for contact form -->
+    <div class="overlay"></div>
+    <script>
+        // Handle form submission
+        document.querySelector('.contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevents the default form submission
+            alert('Thank you for contacting me! I will get back to you soon.'); // Displays an alert message
+        });
+
+        // Add focus and blur event listeners to form inputs
+        const inputs = document.querySelectorAll('.contact-form input, .contact-form textarea');
+        inputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                this.style.backgroundColor = '#ecf0f1'; // Changes background color on focus
+                this.style.color = '#2c3e50'; // Changes text color on focus
+            });
+            input.addEventListener('blur', function() {
+                this.style.backgroundColor = ''; // Resets background color on blur
+                this.style.color = ''; // Resets text color on blur
+            });
+        });
+
+        // Smooth scroll to contact form and show overlay
+        document.querySelector('a[href="#contact"]').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevents the default link behavior
+            document.querySelector('.contact-form').scrollIntoView({ behavior: 'smooth' }); // Smoothly scrolls to the contact form
+            document.querySelector('.overlay').classList.add('show'); // Shows the overlay
+        });
+
+        // Hide overlay on click
+        document.querySelector('.overlay').addEventListener('click', function() {
+            document.querySelector('.contact-form').classList.remove('show'); // Hides the contact form
+            document.querySelector('.overlay').classList.remove('show'); // Hides the overlay
+        });
+
+        // Add scroll event listener to animate sections into view
+        window.addEventListener('scroll', function() {
+            const aboutSection = document.querySelector('#about');
+            const interestsSection = document.querySelector('#interests');
+            const projectsSection = document.querySelector('#projects');
+            const aboutSectionPosition = aboutSection.getBoundingClientRect().top;
+            const interestsSectionPosition = interestsSection.getBoundingClientRect().top;
+            const projectsSectionPosition = projectsSection.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.3;
+
+            if (aboutSectionPosition < screenPosition) {
+                aboutSection.classList.add('visible'); // Adds 'visible' class to about section
+            } else {
+                aboutSection.classList.remove('visible'); // Removes 'visible' class from about section
+            }
+
+            if (interestsSectionPosition < screenPosition) {
+                interestsSection.classList.add('visible'); // Adds 'visible' class to interests section
+            } else {
+                interestsSection.classList.remove('visible'); // Removes 'visible' class from interests section
+            }
+
+            if (projectsSectionPosition < screenPosition) {
+                projectsSection.classList.add('visible'); // Adds 'visible' class to projects section
+            } else {
+                projectsSection.classList.remove('visible'); // Removes 'visible' class from projects section
+            }
+        });
+    </script>
+</body>
+</html>
