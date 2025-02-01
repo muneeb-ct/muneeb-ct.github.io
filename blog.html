@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #4A7C59, #A8D5BA); /* Lighter shades */
+        }
+
+        #blog-page, #create-blog-modal {
+            padding: 20px;
+            max-width: 100%;
+            margin: 20px 20%;
+            background: linear-gradient(to left, #A8D5BA, #F5F5DC); /* Lighter shades */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+
+        h2 {
+            text-align: center;
+            color: #fff; /* Inverted color */
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin: 10px 0 5px;
+        }
+
+        input, textarea {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        textarea#blog-content {
+            padding: 8px; /* Reduced padding by 20% */
+        }
+
+        button {
+            padding: 10px;
+            background: #A8D5BA; /* Lighter shade */
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #4A7C59; /* Lighter shade on hover */
+        }
+
+        #button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        #create-blog-btn, #your-blogs-btn {
+            background: #4A7C59; /* Lighter shade */
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        #create-blog-btn:hover, #your-blogs-btn:hover {
+            background: #A8D5BA; /* Lighter shade on hover */
+        }
+
+        #sign-up-container {
+            margin-left: auto;
+        }
+
+        #sign-up-btn, #sign-in-btn {
+            background: #A8D5BA; /* Lighter shade */
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        #sign-up-btn:hover, #sign-in-btn:hover {
+            background: #4A7C59; /* Lighter shade on hover */
+        }
+
+        #intro-heading {
+            text-align: center;
+            margin: 100px 0;
+            font-size: 80px; /* Increased font size */
+            color: #fff; /* Inverted color */
+            padding: 0 25%;
+            background: url('mountains.jpg') no-repeat center center/cover; /* Background image */
+        }
+
+        #blog-page h3 {
+            text-align: center;
+        }
+
+        #blog-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        #blog-content {
+            flex: 3;
+            width: 100%;
+            display: inline-block;
+        }
+
+        .blog {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-content {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .blog:hover .blog-content {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            #button-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #create-blog-btn, #sign-up-btn, #your-blogs-btn {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            #blog-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #blog-content {
+                width: 100%;
+            }
+        }
+
+        #create-blog-modal textarea#blog-content {
+            margin-bottom: 20px; /* Added space of 20px */
+        }
+    </style>
+</head>
+<body>
+    <!-- Button Container -->
+    <div id="button-container">
+        <button id="create-blog-btn">New Blog</button>
+        <button id="your-blogs-btn">Your Blogs</button> <!-- Added Your Blogs Button -->
+        <div id="sign-up-container">
+            <button id="sign-up-btn">Sign Up</button>
+            <button id="sign-in-btn">Sign In</button> <!-- Added Sign In Button -->
+        </div>
+    </div>
+
+    <!-- Intro Heading -->
+    <div id="intro-heading">
+        <h2>It's Your Freedom to Know</h2>
+    </div>
+
+    <!-- Blog Page -->
+    <div id="blog-page">
+        <div id="blog-container">
+            <!-- Blog Content -->
+            <div id="blog-content">
+                <!-- Removed the blog about AI -->
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
