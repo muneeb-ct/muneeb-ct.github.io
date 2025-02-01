@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Blog</title>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #4A7C59, #A8D5BA); /* Lighter shades */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; /* Center the content vertically */
+            height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            color: #fff; /* Inverted color */
+            animation: fadeIn 2s ease-in-out;
+            font-size: 3em; /* Larger font size */
+            margin-bottom: 20px; /* Space below the heading */
+        }
+
+        #create-blog-modal {
+            padding: 20px;
+            max-width: 100%;
+            background: linear-gradient(to left, #A8D5BA, #F5F5DC); /* Lighter shades */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            margin-top: 20px; /* Space below the heading */
+        }
+
+        h2 {
+            text-align: center;
+            color: #A0522D; /* Lighter shade of brown */
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin: 10px 0 5px;
+        }
+
+        input, textarea {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        textarea#blog-content {
+            padding: 8px; /* Reduced padding by 20% */
+        }
+
+        button {
+            padding: 10px;
+            background: #A8D5BA; /* Lighter shade */
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #4A7C59; /* Lighter shade on hover */
+        }
+
+        #create-blog-modal textarea#blog-content {
+            margin-bottom: 20px; /* Added space of 20px */
+        }
+    </style>
+</head>
+<body>
+    <h1>You have the freedom to express yourself</h1>
+    <!-- Create Blog Modal -->
+    <div id="create-blog-modal">
+        <h2>New Blog</h2>
+        <form id="create-blog-form" enctype="multipart/form-data">
+            <label for="blog-title">Title:</label>
+            <input type="text" id="blog-title" name="blog-title" required>
+            <label for="blog-content">Content:</label>
+            <textarea id="blog-content" name="blog-content" required></textarea>
+            <label for="blog-background">Background Image for Your blog:</label>
+            <input type="file" id="blog-background" name="blog-background">
+            <button type="submit">Create Blog</button>
+        </form>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

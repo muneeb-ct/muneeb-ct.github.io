@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Blogs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #4A7C59, #A8D5BA); /* Lighter shades */
+        }
+
+        #user-blogs-page {
+            padding: 20px;
+            max-width: 100%;
+            margin: 20px 20%;
+            background: linear-gradient(to left, #A8D5BA, #F5F5DC); /* Lighter shades */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+
+        h2 {
+            text-align: center;
+            color: #A52A2A; /* Brown color */
+        }
+
+        #blogs-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog {
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .blog h3 {
+            margin: 0 0 10px;
+        }
+
+        .blog p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- User Blogs Page -->
+    <div id="user-blogs-page">
+        <h2>Your Blogs</h2>
+        <div id="blogs-container">
+            <!-- User blogs will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

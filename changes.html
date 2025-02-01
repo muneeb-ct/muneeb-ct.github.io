@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #4A7C59, #A8D5BA); /* Lighter shades */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #edit-blog-modal {
+            padding: 20px;
+            max-width: 100%;
+            background: linear-gradient(to left, #A8D5BA, #F5F5DC); /* Lighter shades */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+
+        h2 {
+            text-align: center;
+            color: #fff; /* Inverted color */
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin: 10px 0 5px;
+        }
+
+        input, textarea {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        textarea#blog-content {
+            padding: 8px; /* Reduced padding by 20% */
+        }
+
+        button {
+            padding: 10px;
+            background: #A8D5BA; /* Lighter shade */
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #4A7C59; /* Lighter shade on hover */
+        }
+
+        #edit-blog-modal textarea#blog-content {
+            margin-bottom: 20px; /* Added space of 20px */
+        }
+    </style>
+</head>
+<body>
+    <!-- Edit Blog Modal -->
+    <div id="edit-blog-modal">
+        <h2>Edit Blog</h2>
+        <form id="edit-blog-form">
+            <label for="blog-title">Title:</label>
+            <input type="text" id="blog-title" name="blog-title" required>
+            <label for="blog-content">Content:</label>
+            <textarea id="blog-content" name="blog-content" required></textarea>
+            <label for="blog-background">Background Image URL:</label>
+            <input type="text" id="blog-background" name="blog-background">
+            <button type="submit">Update Blog</button>
+        </form>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
